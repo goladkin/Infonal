@@ -1,3 +1,6 @@
+/*
+ * Controller class for Spring MVC
+ */
 package com.infonal.spring.controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -59,6 +62,4 @@ public class SampleController{
 
 		return userService.addUser(user);
 	}
-
-
 }
