@@ -5,15 +5,13 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.infonal.UserServiceImpl.UserService;
+import com.infonal.UserServiceImpl.UserServiceImpl;
 import com.infonal.spring.controller.SampleController;
 
 @WebAppConfiguration
@@ -23,7 +21,7 @@ public class SampleControllerTest {
 	SampleController controller;
 
 	@Mock
-	UserService mockUserService;
+	UserServiceImpl mockUserService;
 
 	private MockMvc mockMvc;
 

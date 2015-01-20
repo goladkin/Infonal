@@ -1,9 +1,9 @@
 Infonal
 ====================
 
-Mülakat öncesi ödev
+Take Home Assignment
 ---------------------
 
-Bu projede Spring MVC, MongoDB ve jQuery kullanýlarak bir kullanýcý arayüzü tasarlanmýþtýr.
-Önyüzde açýlan pencerede bir kullanýcý listesi tabloda gösterilir ve CRUD iþlemleri yapýlmasý mümkündür.
-Ekeleme ve güncelleme iþlemleri için birer modal window kullanýlmýþtýr.
+This project is created using Maven archetype for web applications (webapp) and utilizes Spring MVC, jQuery and MongoDB
+to provide the desired functionality. It comprises a user interface, in which the user is presented with a table
+ which lists the registered users. User is then able to do CRUD operations on the table via modal windows.
