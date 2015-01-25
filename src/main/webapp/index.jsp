@@ -5,12 +5,14 @@
 <head>
 <link rel="stylesheet" href="resources/css/myCss.css" type="text/css" />
 <script src="http://code.jquery.com/jquery-latest.js">
-	
 </script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js">
 	
 </script>
 </head>
+<script src="resources/javascript/jQueryMethods.js"
+	type="text/javascript">
+	</script>
 <body>
 	<h2>Kullanıcı Listesi</h2>
 
@@ -30,36 +32,33 @@
 					<td class="userName">${user.name}</td>
 					<td class="userSurname">${user.surname}</td>
 					<td class="userPhone">${user.phone}</td>
-					<td><input class="btnDelete" type="button" value="Sil" /> <input
-						class="btnUpdate" type="button" value="Güncelle" /></td>
+					<td><button class="btnDelete" value="Sil">Sil</button>
+						<button class="btnUpdate">Güncelle</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<input type="button" value="Kayıt Ekle" id="btnAdd" />
-	
-	
+
+
 	<div class="loaderGif" id="loaderGif">
 		<img id="imgLoaderGif" alt="Not found"
 			src="resources/images/ajax-loader.gif" />
 	</div>
-	
-	<div class="confirmDeleteModalWindow" id="confirmDeleteModal"
-		style="display: none;">
+
+	<div class="confirmDeleteModalWindow" id="confirmDeleteModal">
 		<label id="deleteCandidateId" hidden="true"></label> </br> <label>Seçilen
 			kayıt sistemden silinecek.</label> </br>
-		<button id="btnConfirmDelete" onclick="deleteUser();">Tamam</button>
-		<button id="btnCancelDelete"
-			onclick="$('#confirmDeleteModal').dialog('close');">İptal</button>
+		<button id="btnConfirmDelete">Tamam</button>
+		<button id="btnCancelDelete">İptal</button>
 	</div>
-	
-	<div class="addUpdateModalWindow" id="addUpdateModal"
-		style="display: none;">
+
+	<div class="addUpdateModalWindow" id="addUpdateModal">
 		<div id="modalContents">
 
 			<table id="userInfo">
 
-				<tr style="visibility: hidden">
+				<tr id="tableRowId">
 					<td><label>Id:</label></td>
 					<td><input type="text" id="id" /></td>
 				</tr>
@@ -88,21 +87,15 @@
 					<td></td>
 
 					<td>
-						<button id="btnAddUser" onclick="insertUser();"
-							style="visibility: hidden">Kaydet</button>
-						<button id="btnUpdateUser" onclick="updateUser();"
-							style="visibility: hidden">Güncelle</button>
-							<button id="btnCancel" onclick="$('#addUpdateModal').dialog('close');">İptal</button>
+						<button id="btnAddUser">Kaydet</button>
+						<button id="btnUpdateUser">Güncelle</button>
+						<button id="btnCancel">İptal</button>
 					</td>
 				</tr>
 			</table>
 			<label id="errorLabel"></label>
 		</div>
 	</div>
-	
-	<script src="resources/javascript/jQueryMethods.js" type="text/javascript">
-
-	</script>
 </body>
 </html>
 

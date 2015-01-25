@@ -30,16 +30,31 @@
   visibility: hidden;
 }
 
-div.addUpdateModalWindow {
-	border: 2px solid #000;
-	background-color: #ddd;
+#btnAddUser {
+	display: none;
 }
 
-div.confirmDeleteModalWindow {
-	border: 2px solid #000;
-	background-color: #ddd;
+#btnUpdateUser {
+	display: none;
 }
 
-div.loaderGif {
+#tableRowId {
+	display: none;
+}
+
+.addUpdateModalWindow {
+	border: 2px solid #000;
+	background-color: #ddd;
+	display: none;
+}
+
+.confirmDeleteModalWindow {
+	border: 2px solid #000;
+	background-color: #ddd;
+	display: none;
+}
+
+.loaderGif {
 	outline: none;
+	display: none;
 }
