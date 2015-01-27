@@ -90,31 +90,7 @@ $(document).on('click', '#btnUpdateUser', function(e){
 });
 
 function insertUser() {
-	var regexAlphabetic = /^([a-zA-ZÖöÜüİıŞşÇçĞğ -]+)$/;
-	var regexPhone = /^(0(\d{3}) (\d{3}) (\d{2}) (\d{2}))$/;
-	var input = $("#name").val();
-	if (!regexAlphabetic.test(input)) {
-		$("#errorLabel")
-		.text(
-		"Ad alanı boş olamaz ve alfabetik karakterlerden oluşmalıdır.");
-		return;
-	}
-	input = $("#surname").val();
-	if (!regexAlphabetic.test(input)) {
-		$("#errorLabel")
-		.text(
-		"Soyad alanı boş olamaz ve alfabetik karakterlerden oluşmalıdır.");
-		return;
-	}
-	input = $("#phone").val();
-	if (!regexPhone.test(input)) {
-		$("#errorLabel")
-		.text(
-		'Telefon numarası 0XXX XXX XX XX formatında olmalıdır.');
-		return;
-	}
-	if ($("#captcha").val() != "ejujle") {
-		$("#errorLabel").text('Captcha değerini yanlış girdiniz.');
+	if(!inputsValid()) {
 		return;
 	}
 	$.ajax({
@@ -144,30 +120,9 @@ function insertUser() {
 }
 
 function updateUser() {
-	var regexAlphabetic = /^([a-zA-ZÖöÜüİıŞşÇçĞğ -]+)$/;
-	var regexPhone = /^(0(\d{3}) (\d{3}) (\d{2}) (\d{2}))$/;
-	var input = $("#name").val();
-	if (!regexAlphabetic.test(input)) {
-		$("#errorLabel")
-		.text(
-		"Ad alanı boş olamaz ve alfabetik karakterlerden oluşmalıdır.");
+	if(!inputsValid()) {
 		return;
 	}
-	input = $("#surname").val();
-	if (!regexAlphabetic.test(input)) {
-		$("#errorLabel")
-		.text(
-		"Soyad alanı boş olamaz ve alfabetik karakterlerden oluşmalıdır.");
-		return;
-	}
-	input = $("#phone").val();
-	if (!regexPhone.test(input)) {
-		$("#errorLabel")
-		.text(
-		'Telefon numarası 0XXX XXX XX XX formatında olmalıdır.');
-		return;
-	}
-
 	$.ajax({
 		type : "post",
 		url : "http://localhost:8080/InfonalAssignment/user/update",
@@ -209,4 +164,30 @@ function deleteUser() {
 	});
 }
 
+function inputsValid() {
+	var regexAlphabetic = /^([a-zA-ZÖöÜüİıŞşÇçĞğ -]+)$/;
+	var regexPhone = /^(0(\d{3}) (\d{3}) (\d{2}) (\d{2}))$/;
+	var input = $("#name").val();
+	if (!regexAlphabetic.test(input)) {
+		$("#errorLabel")
+		.text(
+		"Ad alanı boş olamaz ve alfabetik karakterlerden oluşmalıdır.");
+		return false;
+	}
+	input = $("#surname").val();
+	if (!regexAlphabetic.test(input)) {
+		$("#errorLabel")
+		.text(
+		"Soyad alanı boş olamaz ve alfabetik karakterlerden oluşmalıdır.");
+		return false;
+	}
+	input = $("#phone").val();
+	if (!regexPhone.test(input)) {
+		$("#errorLabel")
+		.text(
+		'Telefon numarası 0XXX XXX XX XX formatında olmalıdır.');
+		return false;
+	}
+	return true;
+}
 
